@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zut.edu.dao.BookMapper">
+    <select id="findByCategory" parameterType="int" resultType="Book">
+        select * from book where cid = #{id}
+    </select>
+    <select id="findAll" resultType="Book">
+        select * from book
+    </select>
+    <select id="findByTitleOrAuthor" resultType="Book" parameterType="String">
+        select * from  book where title like "%"#{keyWords}"%" or author like "%"#{keyWords}"%";
+    </select>
+</mapper>

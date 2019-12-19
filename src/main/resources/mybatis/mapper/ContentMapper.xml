@@ -1,0 +1,8 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zut.edu.dao.ContentMapper">
+    <select id="findContent"  parameterType="int" resultType="Content">
+        select * from content where id = #{id}
+    </select>
+</mapper>
